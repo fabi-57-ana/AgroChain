@@ -1,0 +1,81 @@
+[
+    {
+        "indice": 0,
+        "fecha": "2026-07-22 13:39:57.637689",
+        "datos": {
+            "mensaje": "Bloque Genesis AgroChain"
+        },
+        "hash_anterior": "000000",
+        "hash": "7c8a719d442fdc51fcdfe12b6f25ec8c8ea515b62c5bfeafc5db3b0109225ba9"
+    },
+    {
+        "indice": 1,
+        "fecha": "2026-07-22 13:39:57.638668",
+        "datos": {
+            "cultivo": "mani",
+            "anio": 2024,
+            "provincia": "Córdoba",
+            "departamento": "Río Cuarto",
+            "produccion_tn": 297500.0,
+            "rendimiento_kg_ha": 3500.0
+        },
+        "hash_anterior": "7c8a719d442fdc51fcdfe12b6f25ec8c8ea515b62c5bfeafc5db3b0109225ba9",
+        "hash": "fcfc7cd0aba896547948fa6c3d7c6e4fe9e69ddce94a53aaa568ce59596eb56a"
+    },
+    {
+        "indice": 2,
+        "fecha": "2026-07-22 13:39:57.639254",
+        "datos": {
+            "cultivo": "mani",
+            "anio": 2024,
+            "provincia": "Córdoba",
+            "departamento": "General Roca",
+            "produccion_tn": 249150.0,
+            "rendimiento_kg_ha": 3000.0
+        },
+        "hash_anterior": "fcfc7cd0aba896547948fa6c3d7c6e4fe9e69ddce94a53aaa568ce59596eb56a",
+        "hash": "b6825a689ffc5fe2df67de15d7cca4f9293b2d1ec469a42fe9f59af7001ab1ba"
+    },
+    {
+        "indice": 3,
+        "fecha": "2026-07-22 13:39:57.639568",
+        "datos": {
+            "cultivo": "mani",
+            "anio": 2024,
+            "provincia": "Córdoba",
+            "departamento": "Juárez Celman",
+            "produccion_tn": 180084.0,
+            "rendimiento_kg_ha": 3490.0
+        },
+        "hash_anterior": "b6825a689ffc5fe2df67de15d7cca4f9293b2d1ec469a42fe9f59af7001ab1ba",
+        "hash": "edac6fdbde5e0c37cc4d1001ef3e28e517c19f2303c92a70a4ca3f609737603a"
+    },
+    {
+        "indice": 4,
+        "fecha": "2026-07-22 13:39:57.639700",
+        "datos": {
+            "cultivo": "mani",
+            "anio": 2024,
+            "provincia": "Córdoba",
+            "departamento": "Presidente Roque Sáenz Peña",
+            "produccion_tn": 94122.0,
+            "rendimiento_kg_ha": 3400.0
+        },
+        "hash_anterior": "edac6fdbde5e0c37cc4d1001ef3e28e517c19f2303c92a70a4ca3f609737603a",
+        "hash": "ecc1bb06dad6ebcbc743b478b9e3e42800271e332f59ae5f8a3922d294be7a95"
+    },
+    {
+        "indice": 5,
+        "fecha": "2026-07-22 13:39:57.639818",
+        "datos": {
+            "cultivo": "mani",
+            "anio": 2024,
+            "provincia": "Córdoba",
+            "departamento": "Unión",
+            "produccion_tn": 89870.0,
+            "rendimiento_kg_ha": 3800.0
+        },
+        "hash_anterior": "ecc1bb06dad6ebcbc743b478b9e3e42800271e332f59ae5f8a3922d294be7a95",
+        "hash": "0b7ea811f0bb0ef75fcc46e0f601c5bf9273b0a852d7cd800c34d0c3c2315e05"
+    }
+]

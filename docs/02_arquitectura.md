@@ -11,26 +11,26 @@ El sistema se divide en diferentes capas, donde cada componente cumple una funci
 ## 2. Arquitectura general
 
 El flujo completo del sistema es:
-       ```text
-             Dataset INTA
-                  |
-                  v
-          Procesos ETL Python
-                  |
-                  v
-            Base MySQL
-                  |
-    +-------------+-------------+
-    |                           |
-    v                           v
-        Consultas productivas Blockchain
-    |          |
-    |          v
-    | datos_cadena.json
-    |
-    v
-    Análisis de producción agrícola
-    ``` 
+```text
+         Dataset INTA
+              |
+              v
+      Procesos ETL Python
+              |
+              v
+        Base MySQL
+              |
++-------------+-------------+
+|                           |
+v                           v
+    Consultas productivas Blockchain
+|          |
+|          v
+| datos_cadena.json
+|
+v
+Análisis de producción agrícola
+``` 
 
 ## 3. Capa de datos
 

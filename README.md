@@ -43,6 +43,7 @@ graph TD
     C --> D[Consultas SQL]
     C --> E[Blockchain]
     E --> F[Trazabilidad de registros productivos]
+```
 
 # Características principales
 
@@ -80,6 +81,7 @@ AgroChain fue desarrollado utilizando herramientas ampliamente empleadas en proy
 
 El proyecto se encuentra organizado en módulos independientes que colaboran entre sí para procesar los datos desde su origen hasta su almacenamiento y validación.
 
+```mermaid
 graph TD
     A[DATASETS<br/>Archivos CSV originales] --> B[ETL desarrollado en Python<br/>Extracción - Transformación - Carga]
     B --> C[Base de datos MySQL 8.0<br/>Contenedor Docker]
@@ -87,6 +89,7 @@ graph TD
     C --> E[Blockchain<br/>Trazabilidad]
     D --> F[Información validada y lista para análisis]
     E --> F
+```
 
 # Componentes del proyecto
 
@@ -160,14 +163,14 @@ Además, la blockchain puede persistirse en un archivo JSON para conservar la tr
 
 
 # Flujo completo del proyecto
-
+```mermaid
 graph TD
     A[CSV] --> B[Python - ETL]
     B --> C[MySQL - Docker]
     C --> D[Consultas SQL]
     C --> E[Blockchain]
     E --> F[Validación e integridad de registros agrícolas]
-
+```
 # Filosofía del proyecto
 
 AgroChain fue desarrollado siguiendo una arquitectura modular, donde cada componente tiene una única responsabilidad.

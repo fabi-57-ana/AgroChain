@@ -102,24 +102,24 @@ Esto permite verificar si la información registrada fue modificada.
 
 El flujo general del proyecto es:
 
+```text
 Dataset productivo
-|
-v
+        │
+        ▼
 Procesos ETL con Python
-|
-v
+        │
+        ▼
 Base de datos MySQL
-|
-+----------------+
-| |
-v v
-Consultas Blockchain
-productivas 
-|
-v
-Registro trazable
-datos_cadena.json
-
+        │
+   ┌────┴────────────┐
+   │                 │
+   ▼                 ▼
+Consultas        Blockchain
+productivas          │
+                     ▼
+             Registro trazable
+            datos_cadena.json
+```
 
 
 ## 8. Alcance del proyecto

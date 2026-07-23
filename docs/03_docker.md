@@ -23,7 +23,7 @@ La utilización de un contenedor permitió:
 
 
 La arquitectura del entorno quedó conformada por:
-
+```text
 Proyecto AgroChain
         |
         |
@@ -34,8 +34,7 @@ Python ETL Contenedor Docker
         |
         v
       MySQL
-
-
+```
 
 ## 3. Componentes utilizados
 
@@ -87,7 +86,7 @@ realizar consultas SQL.
 Los scripts desarrollados en Python procesan los datasets y envían la información transformada hacia MySQL.
 
 Flujo:
-
+```text
 Archivo CSV
      |
      v
@@ -95,7 +94,7 @@ Python + Pandas
      |
      v
 MySQL dentro de Docker
-
+```
 5. Persistencia de datos
 
 El uso de Docker permite mantener la información almacenada aunque el contenedor sea detenido.
@@ -121,7 +120,7 @@ menor dependencia de configuraciones locales.
 Docker forma parte de la infraestructura de soporte del sistema.
 
 El flujo completo queda:
-
+```text
 Dataset agrícola
         |
         v
@@ -137,7 +136,7 @@ Consultas SQL      Blockchain
                          |
                          v
                  datos_cadena.json
-
+```
 
 8. Conclusión
 

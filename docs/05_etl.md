@@ -13,7 +13,7 @@ Los archivos originales nunca son modificados, ya que constituyen la fuente ofic
 
 El flujo general implementado es el siguiente:
 
-
+```text
 Datasets CSV
       │
       ▼
@@ -30,7 +30,7 @@ Datasets CSV
       │
       ▼
  Base de datos AgroChain
-
+```
 
 
 # 3. Datasets utilizados

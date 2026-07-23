@@ -475,18 +475,19 @@ Si todos los pasos anteriores se ejecutaron correctamente, el proyecto AgroChain
 El proyecto AgroChain implementa un proceso **ETL (Extract, Transform, Load)** para transformar los datos originales del cultivo de maní en información estructurada dentro de una base de datos relacional.
 
 El flujo general del proceso es el siguiente:
-      ```text
-      Datasets CSV
-            │
-            ▼
-       Extracción (Extract)
-            │
-            ▼
-       Transformación (Transform)
-            │
-            ▼
-       Carga en MySQL (Load)
-       ```  
+
+```text
+Datasets CSV
+    │
+    ▼
+ Extracción (Extract)
+    │
+    ▼
+ Transformación (Transform)
+    │
+    ▼
+ Carga en MySQL (Load)
+ ```  
 
 Los procesos ETL fueron desarrollados en Python utilizando **Pandas** y **SQLAlchemy**, y se ejecutan de forma independiente según el tipo de información que se desea cargar.
 

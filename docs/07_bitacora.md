@@ -25,103 +25,116 @@ El entorno quedó preparado para comenzar el desarrollo del modelo de datos y de
 Objetivo
 
 Implementar el primer proceso ETL del proyecto.
-
-Archivo desarrollado
+```text
+Archivo desarrollado:
 etl/cargar_produccion.py
-Actividades realizadas
+
+Actividades realizadas:
 Lectura del dataset anual.
 Transformación de columnas.
 Inserción mediante SQLAlchemy.
 Validación de registros cargados.
-Resultado
-98 registros cargados correctamente.
-Período almacenado: 1927–2024.
 
+Resultado:
+98 registros cargados correctamente.
+
+Período almacenado: 
+1927–2024.
+```
 ## ETL de Provincias
 Objetivo
 
 Construir la tabla maestra de provincias.
-
-Archivo desarrollado
+```text
+Archivo desarrollado:
 etl/cargar_provincias.py
-Actividades realizadas
+
+Actividades realizadas:
 Extracción de provincias únicas.
 Eliminación de duplicados.
 Inserción en MySQL.
-Incidencia
 
+Incidencia:
 Durante la carga se detectó un problema de codificación de caracteres.
 
-Solución
-
+Solución:
 Se utilizó el encoding latin-1 para interpretar correctamente los nombres con caracteres especiales.
 
-Resultado
+Resultado:
 18 provincias cargadas correctamente.
-
+```
 ## ETL de Departamentos
 Objetivo
 
 Crear la tabla de departamentos vinculada con las provincias.
-
-Archivo desarrollado
+```text
+Archivo desarrollado:
 etl/cargar_departamentos.py
-Actividades realizadas
+
+Actividades realizadas:
 Extracción de departamentos únicos.
 Asociación con provincias.
 Conversión del identificador del dataset al identificador interno de MySQL.
-Resultado
-283 departamentos cargados correctamente.
 
+Resultado:
+283 departamentos cargados correctamente.
+```
 ## ETL de Producción Departamental
 Objetivo
 
 Completar la carga histórica de producción de maní a nivel departamental.
-
-Archivo desarrollado
+```text
+Archivo desarrollado:
 etl/cargar_produccion_departamento.py
-Actividades realizadas
+
+Actividades realizadas:
 Lectura del dataset departamental.
 Relación con la tabla departamento.
 Validación del proceso de merge.
 Inserción de los registros históricos.
-Validaciones
+
+Validaciones:
 Registros originales: 5257
 Registros luego del merge: 5257
 Departamentos sin relación: 0
-Resultado
-5257 registros cargados correctamente.
-Período almacenado: 1927–2024.
 
+Resultado:
+5257 registros cargados correctamente.
+
+Período almacenado: 
+1927–2024.
+```
 ## Consultas Analíticas
 Objetivo
 
 Realizar consultas SQL para validar la información cargada y obtener indicadores productivos.
-
-Archivo creado
+```text
+Archivo creado:
 sql/queries/01_consultas_productivas.sql
-Consultas implementadas
+
+Consultas implementadas:
 Evolución histórica de la producción.
 Producción por provincia (2024).
 Ranking de departamentos productores.
 Evolución productiva desde el año 2000.
 Consulta preparada para Blockchain.
-Resultado
 
+Resultado:
 Las consultas verificaron la correcta carga de la información y permitieron obtener indicadores productivos relevantes.
-
+```
 ## Implementación Blockchain
 Objetivo
 
 Incorporar un mecanismo de trazabilidad utilizando una blockchain desarrollada en Python.
-
-Archivos desarrollados
+```text
+Archivos desarrollados:
 bloque.py
 cadena.py
 prueba_bloque.py
 prueba_cadena.py
 cargar_bloques_productivos.py
-Actividades realizadas
+
+Actividades realizadas:
 Implementación de la clase Bloque.
 Implementación de la cadena de bloques.
 Creación del bloque génesis.
@@ -129,14 +142,14 @@ Incorporación de registros productivos reales.
 Implementación de validación por hash.
 Prueba de alteración de datos para verificar integridad.
 Exportación de la cadena al archivo datos_cadena.json.
-Resultado
 
+Resultado:
 Se obtuvo una blockchain funcional que demuestra la trazabilidad e integridad de registros productivos del cultivo de maní.
-
+```
 Estado actual del proyecto
 
 Completado
-
+```text
 Infraestructura Docker.
 Base de datos MySQL.
 Modelo relacional.
@@ -144,7 +157,7 @@ Procesos ETL.
 Consultas analíticas.
 Blockchain funcional.
 Persistencia de la cadena en formato JSON.
-
+```
 ## Próximo paso
 
 Preparar la documentación final y la presentación del proyecto, integrando el flujo completo:

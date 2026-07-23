@@ -11,7 +11,7 @@ El sistema se divide en diferentes capas, donde cada componente cumple una funci
 ## 2. Arquitectura general
 
 El flujo completo del sistema es:
-
+       ```text
              Dataset INTA
                   |
                   v
@@ -30,8 +30,7 @@ El flujo completo del sistema es:
     |
     v
     Análisis de producción agrícola
-
-
+    ``` 
 
 ## 3. Capa de datos
 
@@ -85,7 +84,7 @@ Inserción de información transformada dentro de MySQL.
 
 
 Los procesos principales son:
-
+```text
 etl/
 │
 ├── cargar_provincias.py
@@ -93,7 +92,7 @@ etl/
 ├── cargar_produccion_anual.py
 ├── cargar_produccion_departamento.py
 └── conexion.py
-
+```
 
 ## 5. Capa de base de datos
 
@@ -164,7 +163,7 @@ Cada bloque contiene:
 
 
 Estructura:
-
+```text
 Bloque anterior
        |
        v
@@ -174,7 +173,7 @@ Bloque anterior
        |
        v
 Hash encadenado
-
+```
 
 
 La cadena permite validar que los registros no fueron modificados después de ser almacenados.

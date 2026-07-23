@@ -1,8 +1,5 @@
 # Blockchain - Registro de producción agrícola
 
-Fecha: 22/07/2026
-
-
 ## Objetivo
 
 Implementar una primera prueba de integración entre los datos agrícolas almacenados en MySQL y una estructura blockchain básica.
@@ -107,7 +104,7 @@ Se generaron:
 
 
 Ejemplo de información registrada:
-
+```text
 {
  "cultivo": "mani",
  "anio": 2024,
@@ -116,7 +113,7 @@ Ejemplo de información registrada:
  "produccion_tn": 297500,
  "rendimiento_kg_ha": 3500
 }
-
+```
 Validación final
 
 Resultado de la ejecución:

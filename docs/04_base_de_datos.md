@@ -105,7 +105,7 @@ Periodo:
 
 
 El proceso utilizado fue:
-
+```text
 Dataset CSV
     |
     v
@@ -119,7 +119,7 @@ Base MySQL
     |
     v
 Consultas SQL
-
+```
 
 
 ## 5. Validaciones realizadas
@@ -146,7 +146,7 @@ La base de datos funciona como fuente de información para seleccionar registros
 
 
 Flujo:
-
+```text
    MySQL
     |
     v
@@ -157,7 +157,7 @@ Bloque Blockchain
     |
     v
 Hash y trazabilidad
-
+```
 
 
 ## 7. Conclusión

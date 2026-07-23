@@ -36,21 +36,13 @@ El proyecto no pretende reemplazar sistemas productivos comerciales, sino servir
 
 # Flujo general del sistema
 
-Datasets CSV
-      │
-      ▼
-Procesos ETL (Python)
-      │
-      ▼
-MySQL (Docker)
-      │
-      ├──────────────► Consultas SQL
-      │
-      ▼
-Blockchain
-      │
-      ▼
-Trazabilidad de registros productivos
+```mermaid
+graph TD
+    A[Datasets CSV] --> B[Procesos ETL - Python]
+    B --> C[MySQL - Docker]
+    C --> D[Consultas SQL]
+    C --> E[Blockchain]
+    E --> F[Trazabilidad de registros productivos]
 
 # Características principales
 
@@ -65,7 +57,7 @@ Trazabilidad de registros productivos
 
 
 
-# 🛠 Tecnologías utilizadas
+# Tecnologías utilizadas
 
 AgroChain fue desarrollado utilizando herramientas ampliamente empleadas en proyectos de ingeniería de datos, desarrollo de software y análisis de información. Cada tecnología cumple una función específica dentro de la arquitectura del sistema.
 
@@ -88,27 +80,13 @@ AgroChain fue desarrollado utilizando herramientas ampliamente empleadas en proy
 
 El proyecto se encuentra organizado en módulos independientes que colaboran entre sí para procesar los datos desde su origen hasta su almacenamiento y validación.
 
-                    DATASETS
-            (Archivos CSV originales)
-                       │
-                       ▼
-              ETL desarrollado en Python
-         (Extracción - Transformación - Carga)
-                       │
-                       ▼
-              Base de datos MySQL 8.0
-               (Contenedor Docker)
-                       │
-          ┌────────────┴────────────┐
-          ▼                         ▼
- Consultas SQL               Blockchain
- (Análisis de datos)      (Trazabilidad)
-          │                         │
-          └────────────┬────────────┘
-                       ▼
-              Información validada
-             y lista para análisis
-
+graph TD
+    A[DATASETS<br/>Archivos CSV originales] --> B[ETL desarrollado en Python<br/>Extracción - Transformación - Carga]
+    B --> C[Base de datos MySQL 8.0<br/>Contenedor Docker]
+    C --> D[Consultas SQL<br/>Análisis de datos]
+    C --> E[Blockchain<br/>Trazabilidad]
+    D --> F[Información validada y lista para análisis]
+    E --> F
 
 # Componentes del proyecto
 
@@ -183,21 +161,12 @@ Además, la blockchain puede persistirse en un archivo JSON para conservar la tr
 
 # Flujo completo del proyecto
 
-CSV
- │
- ▼
-Python (ETL)
- │
- ▼
-MySQL (Docker)
- │
- ├────────► Consultas SQL
- │
- └────────► Blockchain
-                 │
-                 ▼
-       Validación e integridad
-       de registros agrícolas
+graph TD
+    A[CSV] --> B[Python - ETL]
+    B --> C[MySQL - Docker]
+    C --> D[Consultas SQL]
+    C --> E[Blockchain]
+    E --> F[Validación e integridad de registros agrícolas]
 
 # Filosofía del proyecto
 
@@ -229,10 +198,12 @@ Antes de comenzar es necesario tener instalado:
 
 Verificar las instalaciones desde una terminal:
 
+```bash
 python --version
 git --version
 docker --version
 docker compose version
+```
 
 Si todos los comandos muestran una versión instalada, el entorno está listo.
 
@@ -291,12 +262,12 @@ En la carpeta principal del proyecto crear un archivo llamado:
 .env
 
 Contenido:
-
+```bash
 MYSQL_HOST=localhost
 MYSQL_PORT=3307
 MYSQL_DATABASE=agrochain
 MYSQL_ROOT_PASSWORD=tu_password
-
+```
 
 Reemplazar **tu_password** por la contraseña utilizada para MySQL.
 
@@ -417,6 +388,7 @@ blockchain/datos_cadena.json
 
 Al finalizar la instalación la estructura principal será similar a:
 
+```text
 AgroChain/
 │
 ├── blockchain/
@@ -429,6 +401,7 @@ AgroChain/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
 # 12. Detener el proyecto
 
@@ -494,32 +467,34 @@ para preservar correctamente nombres de provincias y departamentos.
 Si todos los pasos anteriores se ejecutaron correctamente, el proyecto AgroChain estará completamente operativo, con la base de datos cargada, las consultas disponibles y el módulo de blockchain listo para demostrar la trazabilidad de registros productivos.
 
 
-# 🔄 Procesos ETL
+# Procesos ETL
 
 El proyecto AgroChain implementa un proceso **ETL (Extract, Transform, Load)** para transformar los datos originales del cultivo de maní en información estructurada dentro de una base de datos relacional.
 
 El flujo general del proceso es el siguiente:
-
-Datasets CSV
-      │
-      ▼
- Extracción (Extract)
-      │
-      ▼
- Transformación (Transform)
-      │
-      ▼
- Carga en MySQL (Load)
+      ```text
+      Datasets CSV
+            │
+            ▼
+       Extracción (Extract)
+            │
+            ▼
+       Transformación (Transform)
+            │
+            ▼
+       Carga en MySQL (Load)
+       ```  
 
 Los procesos ETL fueron desarrollados en Python utilizando **Pandas** y **SQLAlchemy**, y se ejecutan de forma independiente según el tipo de información que se desea cargar.
 
 Actualmente el proyecto cuenta con los siguientes procesos:
 
-Script                                | Función                          -------------------------------------------------------------------------------------------------------------------|
-| `cargar_produccion.py`              | Carga la serie histórica anual del cultivo de maní.                                 |                                                                            |
-| `cargar_provincias.py`              | Obtiene las provincias únicas del dataset y las almacena en MySQL.                                |                                                                            |
-| `cargar_departamentos.py`           | Carga los departamentos y establece su relación con cada provincia.                            |                                                                            |
-| `cargar_produccion_departamento.py` | Inserta la producción histórica departamental relacionando cada registro con el departamento correspondiente.      |                                                                            |
+| Script | Función |
+| :--- | :--- |
+| `cargar_produccion.py` | Carga la serie histórica anual del cultivo de maní. |
+| `cargar_provincias.py` | Obtiene las provincias únicas del dataset y las almacena en MySQL. |
+| `cargar_departamentos.py` | Carga los departamentos y establece su relación con cada provincia. |
+| `cargar_produccion_departamento.py` | Inserta la producción histórica departamental relacionando cada registro con el departamento correspondiente. |                                                                         |
 
 Durante el proceso también se realizan transformaciones como:
 
@@ -539,15 +514,10 @@ AgroChain utiliza **MySQL 8.0** como sistema gestor de bases de datos, ejecután
 
 La base de datos almacena la información agrícola en un modelo relacional compuesto por cuatro tablas principales:
 
-provincia
-      │
-      │
-departamento
-      │
-      │
-produccion_departamento
-
-produccion_anual
+* provincia
+* departamento
+* produccion_departamento
+* produccion_anual
 
 Descripción de las tablas:
 
@@ -607,7 +577,7 @@ La documentación completa se encuentra en:
 
 docs/06_blockchain.md
 
-# 📚 Documentación del proyecto
+# Documentación del proyecto
 
 Todo el desarrollo fue documentado durante la implementación para facilitar el mantenimiento y la comprensión del proyecto.
 
@@ -627,7 +597,7 @@ Los documentos disponibles son:
 
 
 # Estructura del proyecto
-
+```text
 AgroChain/
 │
 ├── blockchain/              # Implementación de la blockchain
@@ -654,7 +624,7 @@ AgroChain/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
+```
 La organización modular facilita el mantenimiento del proyecto, la incorporación de nuevos procesos ETL, la ampliación de la base de datos y la integración futura con aplicaciones web, APIs o herramientas de análisis.
 
 
